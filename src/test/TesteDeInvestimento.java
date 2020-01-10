@@ -1,4 +1,10 @@
-package calculadoradeinvestimentos;
+package test;
+
+import model.Conta;
+import service.RealizadorInvestimentos;
+import strategy.investimento.InvestimentoArrojado;
+import strategy.investimento.InvestimentoConservador;
+import strategy.investimento.InvestimentoModerado;
 
 public class TesteDeInvestimento {
 	public static void main(String[] args) {

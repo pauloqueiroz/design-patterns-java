@@ -1,4 +1,7 @@
-package calculadoradeinvestimentos;
+package service;
+
+import model.Conta;
+import strategy.investimento.Investimento;
 
 public class RealizadorInvestimentos {
 

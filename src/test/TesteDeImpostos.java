@@ -1,5 +1,11 @@
-package calculadoradeimpostos;
+package test;
 import java.math.BigDecimal;
+
+import model.Orcamento;
+import service.CalculadorDeImpostos;
+import strategy.imposto.ICCC;
+import strategy.imposto.ICMS;
+import strategy.imposto.ISS;
 
 public class TesteDeImpostos {
 	public static void main(String[] args) {

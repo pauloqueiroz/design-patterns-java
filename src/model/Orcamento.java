@@ -1,13 +1,18 @@
-package calculadoradeimpostos;
+package model;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Orcamento {
 	
 	private BigDecimal valor;
-
+	
+	private List<String> itens;
+ 
 	public Orcamento(BigDecimal valor) {
 		super();
 		this.valor = valor;
+		this.itens = new ArrayList<String>();
 	}
 
 	public BigDecimal getValor() {
@@ -16,5 +21,13 @@ public class Orcamento {
 
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
+	}
+
+	public List<String> getItens() {
+		return itens;
+	}
+
+	public void setItens(List<String> itens) {
+		this.itens = itens;
 	}
 }

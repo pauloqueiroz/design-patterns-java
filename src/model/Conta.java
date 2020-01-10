@@ -1,4 +1,4 @@
-package calculadoradeinvestimentos;
+package model;
 
 public class Conta {
 	

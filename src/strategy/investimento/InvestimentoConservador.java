@@ -1,4 +1,6 @@
-package calculadoradeinvestimentos;
+package strategy.investimento;
+
+import model.Conta;
 
 public class InvestimentoConservador implements Investimento{
 

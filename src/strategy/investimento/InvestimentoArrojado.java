@@ -1,6 +1,8 @@
-package calculadoradeinvestimentos;
+package strategy.investimento;
 
 import java.util.Random;
+
+import model.Conta;
 
 public class InvestimentoArrojado implements Investimento{
 
