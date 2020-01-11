@@ -14,6 +14,12 @@ public class Orcamento {
 		this.valor = valor;
 		this.itens = new ArrayList<String>();
 	}
+	
+	public Orcamento(BigDecimal valor, List<String> itens) {
+		super();
+		this.valor = valor;
+		this.itens = itens;
+	}
 
 	public BigDecimal getValor() {
 		return valor;

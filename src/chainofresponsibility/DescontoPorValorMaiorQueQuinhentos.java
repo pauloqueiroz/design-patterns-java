@@ -6,27 +6,21 @@ import model.Orcamento;
 
 public class DescontoPorValorMaiorQueQuinhentos implements Desconto{
 
-	private Desconto desconto;
+	private Desconto proximo;
 	
 	@Override
 	public BigDecimal desconta(Orcamento orcamento) {
-		// TODO Auto-generated method stub
-		return null;
+		BigDecimal limite = BigDecimal.valueOf(500); 
+		BigDecimal percentualDesconto = BigDecimal.valueOf(0.07);
+		if(orcamento.getValor().compareTo(limite) > 0) {
+			return orcamento.getValor().multiply(percentualDesconto);
+		}
+		return proximo.desconta(orcamento);
 	}
 
 	@Override
 	public void setProximo(Desconto desconto) {
-		// TODO Auto-generated method stub
-		
+		this.proximo = desconto;
 	}
-
-	public Desconto getDesconto() {
-		return desconto;
-	}
-
-	public void setDesconto(Desconto desconto) {
-		this.desconto = desconto;
-	}
-
 	
 }
