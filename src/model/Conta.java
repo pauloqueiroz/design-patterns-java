@@ -6,11 +6,22 @@ public class Conta {
 	
 	private double saldo;
 	
+	private String titular;
+	
 	public Conta(String conta, double saldo) {
 		super();
 		this.conta = conta;
 		this.saldo = saldo;
 	}
+
+	public Conta(String conta, double saldo, String titular) {
+		super();
+		this.conta = conta;
+		this.saldo = saldo;
+		this.titular = titular;
+	}
+
+
 
 	public String getConta() {
 		return conta;
@@ -31,6 +42,14 @@ public class Conta {
 	@Override
 	public String toString() {
 		return "conta: " + conta + " | saldo: "+saldo;
+	}
+
+	public String getTitular() {
+		return titular;
+	}
+
+	public void setTitular(String titular) {
+		this.titular = titular;
 	}
 	
 }

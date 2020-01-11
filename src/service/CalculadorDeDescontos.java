@@ -2,10 +2,10 @@ package service;
 
 import java.math.BigDecimal;
 
-import chainofresponsibility.DescontoCombo;
-import chainofresponsibility.DescontoPorMaisDeCincoItens;
-import chainofresponsibility.DescontoPorValorMaiorQueQuinhentos;
-import chainofresponsibility.SemDesconto;
+import chainofresponsibility.desconto.DescontoCombo;
+import chainofresponsibility.desconto.DescontoPorMaisDeCincoItens;
+import chainofresponsibility.desconto.DescontoPorValorMaiorQueQuinhentos;
+import chainofresponsibility.desconto.SemDesconto;
 import model.Orcamento;
 
 public class CalculadorDeDescontos {
