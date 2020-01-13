@@ -1,4 +1,4 @@
-package strategy.imposto;
+package imposto.strategy;
 import java.math.BigDecimal;
 
 import model.Orcamento;

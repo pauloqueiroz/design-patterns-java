@@ -1,25 +1,25 @@
-package chainofresponsibility.requisicao;
+package requisicao.chainofresponsibility;
 
 import model.Conta;
 import model.Formato;
 import model.Requisicao;
 
-public class RespostaPorCento implements Resposta{
+public class RespostaXml implements Resposta{
 
 	private Resposta proximo;
 	
 	@Override
 	public String responder(Requisicao requisicao) {
-		if(requisicao.getFormato().equals(Formato.PORCENTO)) {
+		if(requisicao.getFormato().equals(Formato.XML)) {
 			Conta conta = requisicao.getConta();
-			return conta.getTitular()+"%"+conta.getSaldo();
+			return "<conta><titular>"+conta.getTitular()+"</titular><saldo>"+conta.getSaldo()+"</saldo></conta>";
 		}
 		return proximo.responder(requisicao);
 	}
-
 	@Override
 	public void setProximo(Resposta proxima) {
 		this.proximo = proxima;
+		
 	}
 
 }

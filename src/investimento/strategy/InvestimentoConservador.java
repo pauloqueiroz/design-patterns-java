@@ -1,4 +1,4 @@
-package strategy.investimento;
+package investimento.strategy;
 
 import model.Conta;
 

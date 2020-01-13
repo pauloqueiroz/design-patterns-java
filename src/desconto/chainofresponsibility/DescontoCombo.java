@@ -1,4 +1,4 @@
-package chainofresponsibility.desconto;
+package desconto.chainofresponsibility;
 
 import java.math.BigDecimal;
 import java.util.Arrays;

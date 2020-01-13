@@ -1,13 +1,13 @@
-package strategy.imposto;
+package imposto.strategy;
 import java.math.BigDecimal;
 
 import model.Orcamento;
 
-public class ICMS implements Imposto{
+public class ISS implements Imposto{
 
 	@Override
 	public BigDecimal calculaImposto(Orcamento orcamento) {
-		return orcamento.getValor().multiply(BigDecimal.valueOf(0.05));
+		return orcamento.getValor().multiply(BigDecimal.valueOf(0.1));
 	}
 
 }

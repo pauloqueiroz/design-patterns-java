@@ -1,4 +1,4 @@
-package chainofresponsibility.requisicao;
+package requisicao.chainofresponsibility;
 
 import model.Conta;
 import model.Formato;

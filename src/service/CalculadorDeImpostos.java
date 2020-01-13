@@ -1,8 +1,8 @@
 package service;
 import java.math.BigDecimal;
 
+import imposto.strategy.Imposto;
 import model.Orcamento;
-import strategy.imposto.Imposto;
 
 public class CalculadorDeImpostos {
 

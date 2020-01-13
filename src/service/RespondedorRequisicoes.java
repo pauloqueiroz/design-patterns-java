@@ -1,10 +1,10 @@
 package service;
 
-import chainofresponsibility.requisicao.RespostaCsv;
-import chainofresponsibility.requisicao.RespostaPorCento;
-import chainofresponsibility.requisicao.RespostaXml;
-import chainofresponsibility.requisicao.SemResposta;
 import model.Requisicao;
+import requisicao.chainofresponsibility.RespostaCsv;
+import requisicao.chainofresponsibility.RespostaPorCento;
+import requisicao.chainofresponsibility.RespostaXml;
+import requisicao.chainofresponsibility.SemResposta;
 
 public class RespondedorRequisicoes {
 

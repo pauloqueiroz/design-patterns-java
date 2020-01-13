@@ -7,15 +7,15 @@ public class Orcamento {
 	
 	private BigDecimal valor;
 	
-	private List<String> itens;
+	private List<Item> itens;
  
 	public Orcamento(BigDecimal valor) {
 		super();
 		this.valor = valor;
-		this.itens = new ArrayList<String>();
+		this.itens = new ArrayList<Item>();
 	}
 	
-	public Orcamento(BigDecimal valor, List<String> itens) {
+	public Orcamento(BigDecimal valor, List<Item> itens) {
 		super();
 		this.valor = valor;
 		this.itens = itens;
@@ -29,11 +29,11 @@ public class Orcamento {
 		this.valor = valor;
 	}
 
-	public List<String> getItens() {
+	public List<Item> getItens() {
 		return itens;
 	}
 
-	public void setItens(List<String> itens) {
+	public void setItens(List<Item> itens) {
 		this.itens = itens;
 	}
 }
