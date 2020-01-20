@@ -16,7 +16,7 @@ public class DescontoCombo implements Desconto{
 	 */
 	@Override
 	public BigDecimal desconta(Orcamento orcamento) {
-		//TODO tratar diferenciação entre minúsculas e maiusculas
+		//TODO tratar diferenciação entre minúsculas e maiusculas e refatorar para usar o novo modelo de itens
 		List<String> combo = Arrays.asList("Lapis", "Caneta");
 		if(orcamento.getItens().containsAll(combo)) {
 			BigDecimal desconto = BigDecimal.valueOf(0.05);
