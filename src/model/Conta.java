@@ -8,6 +8,10 @@ public class Conta {
 	
 	private String titular;
 	
+	private Banco banco;
+
+	private String agencia;
+	
 	public Conta(String conta, double saldo) {
 		super();
 		this.conta = conta;
@@ -21,7 +25,22 @@ public class Conta {
 		this.titular = titular;
 	}
 
-
+	public Conta(String conta, double saldo, String titular, Banco banco) {
+		super();
+		this.conta = conta;
+		this.saldo = saldo;
+		this.titular = titular;
+		this.banco = banco;
+	}
+	
+	public Conta(String conta, double saldo, String titular, Banco banco, String agencia) {
+		super();
+		this.conta = conta;
+		this.saldo = saldo;
+		this.titular = titular;
+		this.banco = banco;
+		this.agencia = agencia;
+	}
 
 	public String getConta() {
 		return conta;
@@ -50,6 +69,18 @@ public class Conta {
 
 	public void setTitular(String titular) {
 		this.titular = titular;
+	}
+
+	public Banco getBanco() {
+		return banco;
+	}
+
+	public void setBanco(Banco banco) {
+		this.banco = banco;
+	}
+
+	public String getAgencia() {
+		return this.agencia;
 	}
 	
 }
