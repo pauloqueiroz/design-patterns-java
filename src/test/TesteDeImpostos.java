@@ -5,6 +5,7 @@ import java.util.Arrays;
 import imposto.strategy.ICCC;
 import imposto.strategy.ICMS;
 import imposto.strategy.ISS;
+import imposto.strategy.ImpostoMuitoAlto;
 import imposto.templatemethod.IHIT;
 import model.Item;
 import model.Orcamento;
@@ -14,13 +15,16 @@ public class TesteDeImpostos {
 	public static void main(String[] args) {
 		// Testes dos strategys 
 		Orcamento orcamento = new Orcamento(BigDecimal.valueOf(4000));
-//		ISS iss = new ISS();
-//		ICMS icms = new ICMS();
-//		ICCC iccc = new ICCC();
+		ISS iss = new ISS(new ImpostoMuitoAlto());
+		ICMS icms = new ICMS();
+		ICCC iccc = new ICCC();
 		CalculadorDeImpostos calculadorDeImpostos = new CalculadorDeImpostos();
-//		calculadorDeImpostos.calcularImpostos(orcamento, iss);
-//		calculadorDeImpostos.calcularImpostos(orcamento, icms);
-//		calculadorDeImpostos.calcularImpostos(orcamento, iccc);
+		System.out.print("Imposto 1: ");
+		calculadorDeImpostos.calcularImpostos(orcamento, iss);
+		System.out.print("Imposto 2: ");
+		calculadorDeImpostos.calcularImpostos(orcamento, icms);
+		System.out.print("Imposto 3: ");
+		calculadorDeImpostos.calcularImpostos(orcamento, iccc);
 		
 		Item pneu = criaItem("Pneu", 200);
 		Item roda = criaItem("Roda", 300);
@@ -29,9 +33,11 @@ public class TesteDeImpostos {
 		Item capacete = criaItem("Capacete", 150);
 		Orcamento orcamento2 = new Orcamento(BigDecimal.valueOf(500), Arrays.asList(pneu,roda,vela,lanterna,pneu));
 		IHIT ihit = new IHIT();
+		System.out.print("Imposto 4: ");
 		calculadorDeImpostos.calcularImpostos(orcamento2, ihit);
 		
 		Orcamento orcamento3 = new Orcamento(BigDecimal.valueOf(500), Arrays.asList(pneu,roda,vela,lanterna,capacete));
+		System.out.print("Imposto 5: ");
 		calculadorDeImpostos.calcularImpostos(orcamento3, ihit);
 	}
 	

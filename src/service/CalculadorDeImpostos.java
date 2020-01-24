@@ -8,7 +8,7 @@ import model.Orcamento;
 public class CalculadorDeImpostos {
 
 	public void calcularImpostos(Orcamento orcamento, Imposto imposto) {
-		BigDecimal valor = imposto.calculaImposto(orcamento);
+		BigDecimal valor = imposto.calcula(orcamento);
 		System.out.println("Imposto: "+valor);
 	}
 	

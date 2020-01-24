@@ -3,7 +3,15 @@ import java.math.BigDecimal;
 
 import model.Orcamento;
 
-public class ICCC implements Imposto{
+public class ICCC extends Imposto{
+
+	public ICCC() {
+		super();
+	}
+
+	public ICCC(Imposto outroImposto) {
+		super(outroImposto);
+	}
 
 	@Override
 	public BigDecimal calculaImposto(Orcamento orcamento) {
