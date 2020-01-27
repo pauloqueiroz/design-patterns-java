@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Date;
+
 public class Conta {
 	
 	private String conta;
@@ -11,6 +13,8 @@ public class Conta {
 	private Banco banco;
 
 	private String agencia;
+	
+	private Date dataAbertura;
 	
 	public Conta(String conta, double saldo) {
 		super();
@@ -40,6 +44,16 @@ public class Conta {
 		this.titular = titular;
 		this.banco = banco;
 		this.agencia = agencia;
+	}
+	
+	public Conta(String conta, double saldo, String titular, Banco banco, String agencia, Date dataAbertura) {
+		super();
+		this.conta = conta;
+		this.saldo = saldo;
+		this.titular = titular;
+		this.banco = banco;
+		this.agencia = agencia;
+		this.dataAbertura = dataAbertura;
 	}
 
 	public String getConta() {
@@ -81,6 +95,14 @@ public class Conta {
 
 	public String getAgencia() {
 		return this.agencia;
+	}
+
+	public Date getDataAbertura() {
+		return dataAbertura;
+	}
+
+	public void setDataAbertura(Date dataAbertura) {
+		this.dataAbertura = dataAbertura;
 	}
 	
 }
