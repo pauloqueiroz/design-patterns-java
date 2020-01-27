@@ -6,7 +6,9 @@ import imposto.strategy.ICCC;
 import imposto.strategy.ICMS;
 import imposto.strategy.ISS;
 import imposto.strategy.ImpostoMuitoAlto;
+import imposto.templatemethod.ICPP;
 import imposto.templatemethod.IHIT;
+import imposto.templatemethod.IKCV;
 import model.Item;
 import model.Orcamento;
 import service.CalculadorDeImpostos;
@@ -39,6 +41,11 @@ public class TesteDeImpostos {
 		Orcamento orcamento3 = new Orcamento(BigDecimal.valueOf(500), Arrays.asList(pneu,roda,vela,lanterna,capacete));
 		System.out.print("Imposto 5: ");
 		calculadorDeImpostos.calcularImpostos(orcamento3, ihit);
+		
+		ICPP icppComposto = new ICPP(new IKCV());
+		System.out.print("Imposto icpp e ikcv composto: ");
+		calculadorDeImpostos.calcularImpostos(orcamento2, icppComposto);
+		
 	}
 	
 	public static Item criaItem(String nome, double valor){

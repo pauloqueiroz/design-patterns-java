@@ -2,9 +2,18 @@ package imposto.templatemethod;
 
 import java.math.BigDecimal;
 
+import imposto.strategy.Imposto;
 import model.Orcamento;
 
 public class ICPP extends TemplateDeImpostoCondicional{
+	
+	public ICPP() {
+		super();
+	}
+
+	public ICPP(Imposto outroImposto) {
+		super(outroImposto);
+	}
 
 	@Override
 	public BigDecimal minimaTaxacao(Orcamento orcamento) {
@@ -23,5 +32,6 @@ public class ICPP extends TemplateDeImpostoCondicional{
 		BigDecimal quinhentos = BigDecimal.valueOf(500);
 		return orcamento.getValor().compareTo(quinhentos) > 0;
 	}
+
 
 }

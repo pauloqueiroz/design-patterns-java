@@ -2,10 +2,19 @@ package imposto.templatemethod;
 
 import java.math.BigDecimal;
 
+import imposto.strategy.Imposto;
 import model.Item;
 import model.Orcamento;
 
 public class IKCV extends TemplateDeImpostoCondicional{
+
+	public IKCV() {
+		super();
+	}
+
+	public IKCV(Imposto outroImposto) {
+		super(outroImposto);
+	}
 
 	@Override
 	public BigDecimal minimaTaxacao(Orcamento orcamento) {

@@ -5,10 +5,19 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+import imposto.strategy.Imposto;
 import model.Item;
 import model.Orcamento;
 
 public class IHIT extends TemplateDeImpostoCondicional{
+	
+	public IHIT() {
+		super();
+	}
+
+	public IHIT(Imposto outroImposto) {
+		super(outroImposto);
+	}
 
 	@Override
 	public BigDecimal minimaTaxacao(Orcamento orcamento) {

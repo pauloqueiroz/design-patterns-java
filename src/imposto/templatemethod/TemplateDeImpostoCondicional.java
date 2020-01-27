@@ -2,11 +2,20 @@ package imposto.templatemethod;
 
 import java.math.BigDecimal;
 
+import imposto.strategy.Imposto;
 import model.Orcamento;
 
-public abstract class TemplateDeImpostoCondicional {
+public abstract class TemplateDeImpostoCondicional extends Imposto{
 	
-	public BigDecimal calcula(Orcamento orcamento) {
+	public TemplateDeImpostoCondicional() {
+		super();
+	}
+
+	public TemplateDeImpostoCondicional(Imposto outroImposto) {
+		super(outroImposto);
+	}
+
+	public BigDecimal calculaImposto(Orcamento orcamento) {
 		if(deveUsarMaximaTaxacao(orcamento)) {
 			return maximaTaxacao(orcamento);
 		}
