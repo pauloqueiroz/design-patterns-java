@@ -18,6 +18,13 @@ public abstract class Filtro {
 	}
 
 	public abstract List<Conta> filtra(List<Conta> contas);
+	
+	public List<Conta> proximo(List<Conta> contas){
+		if(this.getOutroFiltro() != null) {
+			return this.getOutroFiltro().filtra(contas);
+		}
+		return null;
+	}
 
 	public Filtro getOutroFiltro() {
 		return outroFiltro;

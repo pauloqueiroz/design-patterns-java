@@ -1,6 +1,7 @@
 package filtro.decorator;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import model.Conta;
 
@@ -16,8 +17,9 @@ public class FiltroSaldoPequeno extends Filtro{
 
 	@Override
 	public List<Conta> filtra(List<Conta> contas) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Conta> list = contas.stream().filter(c-> c.getSaldo() < 100).collect(Collectors.toList());
+		list.addAll(proximo(contas));
+		return list;
 	}
 
 }
