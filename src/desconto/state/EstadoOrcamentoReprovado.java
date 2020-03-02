@@ -3,6 +3,8 @@ package desconto.state;
 import model.Orcamento;
 
 public class EstadoOrcamentoReprovado implements EstadoOrcamento{
+	
+	boolean aplicado = false;
 
 	@Override
 	public void aplicaDescontoExtra(Orcamento orcamento) {

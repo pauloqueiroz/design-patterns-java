@@ -5,15 +5,22 @@ import java.math.BigDecimal;
 import model.Orcamento;
 
 public class EstadoOrcamentoAprovado implements EstadoOrcamento{
+	
+	boolean aplicado = false;
 
 	/**
 	 * Orcamentos aprovados possuem desconto extra de 2% 
 	 */
 	@Override
 	public void aplicaDescontoExtra(Orcamento orcamento) {
-		BigDecimal desconto2PorCento = BigDecimal.valueOf(0.98);
-		BigDecimal valorComDesconto = orcamento.getValor().multiply(desconto2PorCento);
-		orcamento.setValor(valorComDesconto);
+		if(!aplicado) {			
+			BigDecimal desconto2PorCento = BigDecimal.valueOf(0.98);
+			BigDecimal valorComDesconto = orcamento.getValor().multiply(desconto2PorCento);
+			orcamento.setValor(valorComDesconto);
+			aplicado = true;
+		}else {
+			throw new RuntimeException("O desconto não pode ser aplicado mais de uma vez.");
+		}
 	}
 
 	@Override

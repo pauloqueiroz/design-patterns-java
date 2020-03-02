@@ -6,14 +6,21 @@ import model.Orcamento;
 
 public class EstadoOrcamentoEmAprovacao implements EstadoOrcamento{
 
+	boolean aplicado = false;
+	
 	/**
 	 * Orcamentos em aprovação possuem desconto extra de 5% 
 	 */
 	@Override
 	public void aplicaDescontoExtra(Orcamento orcamento) {
-		BigDecimal desconto5PorCento = BigDecimal.valueOf(0.95);
-		BigDecimal valorComDesconto = orcamento.getValor().multiply(desconto5PorCento);
-		orcamento.setValor(valorComDesconto);
+		if(!aplicado) {
+			BigDecimal desconto5PorCento = BigDecimal.valueOf(0.95);
+			BigDecimal valorComDesconto = orcamento.getValor().multiply(desconto5PorCento);
+			orcamento.setValor(valorComDesconto);
+			aplicado = true;
+		}else {
+			throw new RuntimeException("o desconto já foi aplicado.");
+		}
 	}
 
 	@Override

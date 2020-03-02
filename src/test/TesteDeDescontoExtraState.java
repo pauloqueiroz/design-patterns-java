@@ -14,7 +14,8 @@ public class TesteDeDescontoExtraState {
 
         sofa.aplicaDescontoExtra();
         System.out.println(sofa.getValor()); // imprime 465,50 pois descontou 2%
-
+        // sofa.aplicaDescontoExtra();  tenta aplicar o mesmo desconto pela segunda vez. Deve lançar exceção
+        
         sofa.finaliza();
 
         // reforma.aplicaDescontoExtra(); lancaria excecao, pois não pode dar desconto nesse estado
